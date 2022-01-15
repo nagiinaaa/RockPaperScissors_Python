@@ -2,21 +2,18 @@ import random
 
 playerScore = 0
 computerScore = 0
-gameRounds = input("How many rounds would you like to play? (enter odd number)")
+gameRounds = input("How many rounds would you like to play?")
 roundsPlayed = 0
 computerOptions = ["Rock", "Paper", "Scissors"]
 
 
 while gameRounds != "":
-    if (not gameRounds.isnumeric()):
-        print("Error: please enter an odd number or press enter to exit")
-        gameRounds = input("How many rounds would you like to play? (enter odd number)")
-    elif(int(gameRounds) % 2 != 0):
-        playerChoice = input("Rock, Paper or Scissors?")
-        print(playerChoice)
-        randomNumber = random.randrange(3)
-        computerChoice = computerOptions[randomNumber]
-        while playerScore < int(gameRounds) and computerScore < int(gameRounds):
+    if(gameRounds.isnumeric()):
+        while roundsPlayed < int(gameRounds):
+            playerChoice = input("Rock, Paper or Scissors?")
+            print(playerChoice)
+            randomNumber = random.randrange(3)
+            computerChoice = computerOptions[randomNumber]
             if(playerChoice == "Rock" and computerChoice == "Scissors" or
                     playerChoice == "Scissors" and computerChoice == "Paper" or
                     playerChoice == "Paper" and computerChoice == "Rock" ):
@@ -24,19 +21,6 @@ while gameRounds != "":
                 roundsPlayed +=1
                 print("you scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
-                if(roundsPlayed == int(gameRounds)):
-                    if(playerScore > computerScore):
-                        print("Congratulations! You won the game!")
-                        gameRounds=""
-                        break
-                    elif(playerScore < computerScore):
-                        print("Better luck next time... Computer won the game")
-                        gameRounds=""
-                        break
-                    else:
-                        print("Game ended on a tie")
-                        gameRounds = ""
-                        break
             elif (playerChoice == "Rock" and computerChoice == "Paper" or
                     playerChoice == "Paper" and computerChoice == "Scissors" or
                     playerChoice == "Scissors" and computerChoice == "Rock"):
@@ -44,48 +28,34 @@ while gameRounds != "":
                 roundsPlayed += 1
                 print("The computer scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
-                if (roundsPlayed == int(gameRounds)):
-                    if (playerScore > computerScore):
-                        print("Congratulations! You won the game!")
-                        gameRounds=""
-                        break
-                    elif (playerScore < computerScore):
-                        print("Better luck next time... Computer won the game")
-                        gameRounds=""
-                        break
-                    else:
-                        print("Game ended on a tie")
-                        gameRounds=""
-                        break
             elif (playerChoice == "Rock" and computerChoice == "Rock" or
                   playerChoice == "Scissors" and computerChoice == "Scissors" or
                   playerChoice == "Paper" and computerChoice == "Paper"):
                 roundsPlayed += 1
                 print("Draw! Nobody scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
-                if (roundsPlayed == int(gameRounds)):
-                    if (playerScore > computerScore):
-                        print("Congratulations! You won the game!")
-                        gameRounds=""
-                        break
-                    elif (playerScore < computerScore):
-                        print("Better luck next time... Computer won the game")
-                        gameRounds=""
-                        break
-                    else:
-                        print("Game ended on a tie")
-                        gameRounds=""
-                        break
             else:
                 print("Error: Please try again")
-
-
-            playerChoice = input("Rock, Paper or Scissors?")
-            randomNumber = random.randrange(2)
-            computerChoice = computerOptions[randomNumber]
-    elif(int(gameRounds) % 2 == 0):
-        print("Error: please enter an odd number or press enter to exit")
-        gameRounds = input("How many rounds would you like to play? (enter odd number)")
-
-
+        if(int(gameRounds) == roundsPlayed):
+            if (playerScore > computerScore):
+                print("Congratulations! You won the game!")
+                break
+            elif (playerScore < computerScore):
+                print("Better luck next time... Computer won the game")
+                break
+            else:
+                print("Game ended on a tie")
+                tieBreaker = input("Would you like to play a tie breaker? (enter yes or no)")
+                print(tieBreaker)
+                if (tieBreaker == "yes"):
+                    gameRounds = "1"
+                    roundsPlayed = 0
+                elif (tieBreaker == "no"):
+                    break
+                else:
+                    print("Error: enter yes or no")
+                    tieBreaker = input("Would you like to play a tie breaker? (enter yes or no)")
+    else:
+        print("Error: please enter a number or press enter to exit")
+        gameRounds = input("How many rounds would you like to play?")
 print("Goodbye!")
