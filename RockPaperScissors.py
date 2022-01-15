@@ -15,23 +15,23 @@ while gameRounds != "":
             randomNumber = random.randrange(3)
             computerChoice = computerOptions[randomNumber]
             print("Computer chose " + computerChoice)
-            if(playerChoice == "Rock" and computerChoice == "Scissors" or
-                    playerChoice == "Scissors" and computerChoice == "Paper" or
-                    playerChoice == "Paper" and computerChoice == "Rock" ):
+            if(playerChoice.lower() == "rock" and computerChoice.lower() == "scissors" or
+                    playerChoice.lower() == "scissors" and computerChoice.lower() == "paper" or
+                    playerChoice.lower() == "paper" and computerChoice.lower() == "rock" ):
                 playerScore += 1
                 roundsPlayed +=1
                 print("you scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
-            elif (playerChoice == "Rock" and computerChoice == "Paper" or
-                    playerChoice == "Paper" and computerChoice == "Scissors" or
-                    playerChoice == "Scissors" and computerChoice == "Rock"):
+            elif (playerChoice.lower() == "rock" and computerChoice.lower() == "paper" or
+                    playerChoice.lower() == "paper" and computerChoice.lower() == "scissors" or
+                    playerChoice.lower() == "scissors" and computerChoice.lower() == "rock"):
                 computerScore +=1
                 roundsPlayed += 1
                 print("The computer scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
-            elif (playerChoice == "Rock" and computerChoice == "Rock" or
-                  playerChoice == "Scissors" and computerChoice == "Scissors" or
-                  playerChoice == "Paper" and computerChoice == "Paper"):
+            elif (playerChoice.lower() == "rock" and computerChoice.lower() == "rock" or
+                  playerChoice.lower() == "scissors" and computerChoice.lower() == "scissors" or
+                  playerChoice.lower() == "paper" and computerChoice.lower() == "paper"):
                 roundsPlayed += 1
                 print("Draw! Nobody scored a point")
                 print("The current score is player " + str(playerScore) + " computer " + str(computerScore))
@@ -47,10 +47,10 @@ while gameRounds != "":
             else:
                 print("Game ended on a tie")
                 tieBreaker = input("Would you like to play a tie breaker? (enter yes or no)")
-                if (tieBreaker == "yes"):
+                if (tieBreaker.lower() == "yes"):
                     gameRounds = "1"
                     roundsPlayed = 0
-                elif (tieBreaker == "no"):
+                elif (tieBreaker.lower() == "no"):
                     break
                 else:
                     print("Error: enter yes or no")
