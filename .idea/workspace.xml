@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378b552e-aae7-4314-a9f0-b637238d01f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RockPaperScissors.py" beforeDir="false" afterPath="$PROJECT_DIR$/RockPaperScissors.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642259565895</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="comparisons to inputs are now case insensitive">
+      <created>1642259985471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642259985471</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +123,7 @@
     <MESSAGE value="Players can now decide how many rounds a game will be" />
     <MESSAGE value="Added option to play a tie breaker round" />
     <MESSAGE value="User no longer asked if they want to play the tie breaker round twice after making a typo. Computer's choice now printed and not just the result of the round." />
-    <option name="LAST_COMMIT_MESSAGE" value="User no longer asked if they want to play the tie breaker round twice after making a typo. Computer's choice now printed and not just the result of the round." />
+    <MESSAGE value="comparisons to inputs are now case insensitive" />
+    <option name="LAST_COMMIT_MESSAGE" value="comparisons to inputs are now case insensitive" />
   </component>
 </project>
